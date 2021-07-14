@@ -68,8 +68,9 @@ endif
 
 ifdef PEGASUS_HAS_SSL
     ifeq ($(OS_TYPE),windows)
-        SYS_LIBS += /libpath:$(OPENSSL_HOME)/lib libeay32.lib ssleay32.lib
-    else
+#        SYS_LIBS += /libpath:$(OPENSSL_HOME)/lib libcrypto.lib libssl.lib
+         SYS_LIBS += /libpath:$(OPENSSL_HOME)/lib libeay32.lib ssleay32.lib
+             else
         ifeq ($(OS_TYPE),vms)
             EXTRA_LIBRARIES += -L$(OPENSSL_LIB) \
                 -lssl$$libssl_shr32 -lssl$$libcrypto_shr32

@@ -22,7 +22,8 @@ lib32/
 # at top level
 home/
 pegasushome/
-
+pegasus/work/
+target
 
 # Prerequisites
 *.d
