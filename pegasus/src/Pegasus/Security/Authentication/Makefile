@@ -85,3 +85,24 @@ SYS_LIBS = ws2_32.lib advapi32.lib
 endif
 
 include $(ROOT)/mak/library.mak
+
+
+ifdef PEGASUS_HAS_SSL
+    ifeq ($(OS_TYPE),windows)
+        ifeq ($(OPENSSL_VERSION_NUMBER), 0x10100000L)
+            SYS_LIBS += /libpath:$(OPENSSL_HOME)/lib libcrypto.lib libssl.lib
+        else
+            SYS_LIBS += /libpath:$(OPENSSL_HOME)/lib libeay32.lib ssleay32.lib
+        endif
+    else
+        ifeq ($(OS_TYPE), vms)
+            EXTRA_LIBRARIES += -L$(OPENSSL_LIB) \
+                -lssl$$libssl_shr32 -lssl$$libcrypto_shr32
+        else
+            ifdef OPENSSL_HOME
+                EXTRA_LIBRARIES += -L$(OPENSSL_HOME)/lib
+            endif
+            EXTRA_LIBRARIES += -lssl -lcrypto
+        endif
+    endif
+endif

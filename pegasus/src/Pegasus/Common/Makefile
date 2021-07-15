@@ -227,8 +227,11 @@ SOURCES = $(SOURCES1) $(SOURCES2)
 
 ifdef PEGASUS_HAS_SSL
     ifeq ($(OS_TYPE),windows)
-#        SYS_LIBS += /libpath:$(OPENSSL_HOME)/lib libcrypto.lib libssl.lib
-         SYS_LIBS += /libpath:$(OPENSSL_HOME)/lib libeay32.lib ssleay32.lib
+        ifeq ($(OPENSSL_VERSION_NUMBER), 0x10100000L)
+            SYS_LIBS += /libpath:$(OPENSSL_HOME)/lib libcrypto.lib libssl.lib
+        else
+            SYS_LIBS += /libpath:$(OPENSSL_HOME)/lib libeay32.lib ssleay32.lib
+        endif
     else
         ifeq ($(OS_TYPE), vms)
             EXTRA_LIBRARIES += -L$(OPENSSL_LIB) \

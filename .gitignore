@@ -1,3 +1,9 @@
+.vs
+.vscode
+Debug
+Include
+
+
 pegasus/src/utils/mu/mu
 # OpenPegasus specific files than may be left over after build and test
 pegasus/src/Pegasus/Common/tests/Logger/log.trace.0

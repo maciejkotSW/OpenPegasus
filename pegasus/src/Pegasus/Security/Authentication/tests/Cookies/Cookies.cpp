@@ -31,6 +31,8 @@
 
 #include <Pegasus/Common/Config.h>
 #include <Pegasus/Common/PegasusAssert.h>
+#include "Pegasus/Common/System.h"
+
 #include <iostream>
 #include <Pegasus/Config/ConfigManager.h>
 #include <Pegasus/Security/Authentication/Cookies.h>
@@ -122,7 +124,8 @@ void testAuthenticationFailure_3()
 
     sessionID = sessions.addNewSession(userName, validIP);
 
-    sleep(timeout);
+	
+    System::sleep(timeout);
     bool authenticated = sessions.isAuthenticated(sessionID, validIP,
             outUserName);
     PEGASUS_TEST_ASSERT(!authenticated);

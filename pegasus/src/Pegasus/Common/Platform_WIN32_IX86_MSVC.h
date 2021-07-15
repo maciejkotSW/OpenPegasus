@@ -47,6 +47,8 @@
 #define Pegasus_Platform_WIN32_IX86_MSVC_h
 
 #define PEGASUS_OS_TYPE_WINDOWS
+#define PEGASUS_USE_EXPERIMENTAL_INTERFACES
+
 
 #define PEGASUS_EXPORT __declspec(dllexport)
 
