@@ -48,6 +48,10 @@
 
 #define PEGASUS_OS_TYPE_WINDOWS
 
+#ifndef PEGASUS_USE_EXPERIMENTAL_INTERFACES
+#define PEGASUS_USE_EXPERIMENTAL_INTERFACES
+#endif
+
 #define PEGASUS_EXPORT __declspec(dllexport)
 
 #define PEGASUS_IMPORT __declspec(dllimport)

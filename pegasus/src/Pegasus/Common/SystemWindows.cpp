@@ -49,6 +49,13 @@
 #define SECURITY_WIN32
 #include <security.h>
 
+#ifdef PEGASUS_HAS_SSL
+    #ifndef APP_LINK_ADDED
+    #define APP_LINK_ADDED
+    #include<openssl/applink.c>
+    #endif
+#endif
+
 PEGASUS_NAMESPACE_BEGIN
 
 #define PEGASUS_ACCESS_EXISTS 0

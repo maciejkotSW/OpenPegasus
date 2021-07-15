@@ -63,3 +63,8 @@ target
 *.exe
 *.out
 *.app
+OpenPegasus.sln
+OpenPegasus.vcxproj
+OpenPegasus.vcxproj.filters
+OpenPegasus.vcxproj.user
+pegasus/mak/version-windows.RES
