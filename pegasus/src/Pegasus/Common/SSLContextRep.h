@@ -38,12 +38,6 @@
 # include <openssl/ssl.h>
 # include <openssl/rand.h>
 
-//Include the applink.c to stop crashes as per OpenSSL FAQ
-//http://www.openssl.org/support/faq.html#PROG
-# ifdef PEGASUS_OS_TYPE_WINDOWS
- # include<openssl/applink.c>
-# endif
-
 #else
 # define SSL_CTX void
 #endif
