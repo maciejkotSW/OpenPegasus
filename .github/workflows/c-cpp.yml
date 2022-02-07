@@ -23,9 +23,9 @@ jobs:
       working-directory: ./pegasus
       run: make buildmu
 
-    - name: make all
+    - name: make client libs
       working-directory: ./pegasus
-      run: make all
+      run: make buildclientlibs
       
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.3.1
