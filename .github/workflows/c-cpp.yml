@@ -21,10 +21,10 @@ jobs:
       
     - name: make buildmu
       working-directory: ./pegasus
-      run: make all
+      run: make buildmu
 
     - name: make all
-      
+      working-directory: ./pegasus
       run: make all
       
     - name: Upload a Build Artifact
