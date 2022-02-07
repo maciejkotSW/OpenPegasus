@@ -18,8 +18,17 @@ jobs:
     - name: configure
       working-directory: ./pegasus
       run: ./configure
-    - name: make
+      
+    - name: make buildmu
       working-directory: ./pegasus
       run: make all
 
-
+    - name: make all
+      
+      run: make all
+      
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v2.3.1
+      with:
+        name: Pegasus
+        path: ./pegasus/bin
