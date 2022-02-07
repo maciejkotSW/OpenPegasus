@@ -10,17 +10,16 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./pegasus
-
+ 
     steps:
     - name: Install pam   
       run: sudo apt-get install -y libpam0g     
     - uses: actions/checkout@v2
     - name: configure
+      working-directory: ./pegasus
       run: ./configure
     - name: make
+      working-directory: ./pegasus
       run: make all
 
 
