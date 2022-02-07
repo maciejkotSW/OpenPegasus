@@ -12,8 +12,8 @@ jobs:
     runs-on: ubuntu-latest
  
     steps:
-    - name: Install pam   
-      run: sudo apt-get install -y libpam0g     
+    - name: find pam   
+      run:  sudo find . -name "pam_appl.h"
     - uses: actions/checkout@v2
     - name: configure
       working-directory: ./pegasus
