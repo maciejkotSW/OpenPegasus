@@ -8,7 +8,7 @@ on:
 jobs:
   build:
     continue-on-error: true
-    runs-on: windows-latest
+    runs-on:  windows-2019 
 
     steps:
     - uses: actions/checkout@v3
@@ -36,6 +36,13 @@ jobs:
           echo %PEGASUS_ROOT%
           echo %PEGASUS_HOME%
           echo %PEGASUS_PLATFORM%
+
+    - name: Create output folders
+      run: |
+        mkdir ${env:GITHUB_WORKSPACE}\work\bin
+        mkdir ${env:GITHUB_WORKSPACE}\work\lib
+        mkdir ${env:GITHUB_WORKSPACE}\work\obj
+
 
     - name: Build MU
       working-directory: pegasus
