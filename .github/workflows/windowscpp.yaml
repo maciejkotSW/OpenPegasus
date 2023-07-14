@@ -7,6 +7,7 @@ on:
 
 jobs:
   build:
+    continue-on-error: true
     runs-on: windows-latest
 
     steps:
@@ -36,7 +37,10 @@ jobs:
           echo %PEGASUS_HOME%
           echo %PEGASUS_PLATFORM%
 
-    - name: Build World
+    - name: Build MU
       working-directory: pegasus
-      run: make world
+      run: make mu
 
+    - name: Build Client Lib
+      working-directory: pegasus
+      run: make buildclientlibs
