@@ -39,8 +39,6 @@ jobs:
 
     - name: Build MU
       working-directory: pegasus
-      run: make mu
-
-    - name: Build Client Lib
-      working-directory: pegasus
-      run: make buildclientlibs
+      run: |
+        make buildmu
+        make buildclientlibs
